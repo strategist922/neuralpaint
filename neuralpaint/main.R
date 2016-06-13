@@ -23,7 +23,7 @@ query_twitter <- function() {
 }
 
 get_inputs <- function(status_id) {
-  selected_status <- content(req)[sapply(content(req), FUN = function(x) x$id == status_id)][[1]]
+  selected_status <- content(req)[sapply(content(req), FUN = function(x) x$id_str == status_id)][[1]]
   username <- selected_status$user$screen_name
   content_image_url <- selected_status$extended_entities$media[[1]]$media_url_https
   style_image_url <- selected_status$extended_entities$media[[2]]$media_url_https
